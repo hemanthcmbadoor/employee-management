@@ -1,0 +1,33 @@
+.sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
+    .logo {
+        img {
+            width: 200px;
+        }
+        text-align: center;
+    }
+
+    .menu-list {
+        cursor: default;
+        color: #39ac73;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 0px 10px 15px;
+        p {
+            margin: 0px;
+            font-weight: 600;
+        }
+        .icon {
+            font-size: 25px;
+        }
+    }
+
+    .menu-list:hover {
+        background-color: #e6e6e6;
+    }
+}
