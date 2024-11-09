@@ -1,4 +1,7 @@
 .overview-wrapper {
+    display: flex;
+    flex-flow: row;
+
     .main-content {
         display: flex;
         flex-wrap: wrap;

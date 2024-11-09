@@ -1,0 +1,26 @@
+<div class="dropdown-wrapper">
+  <div class="dropdown">
+    <button class="dropdown-btn" [ngClass]="{ 'bottom-border': isShowBorder } " (click)="toggleDropdown()">
+        <div class="title1">
+            {{ dropDownData?.label }}
+        </div>
+        <div class="dropdown-title-bottom">
+            <div>
+                <span>{{ selectedOption ? selectedOption?.label : dropDownData.placeholder }}</span>
+            </div>
+            <div>
+                <fa-icon [icon]="['fas', 'chevron-down']" class="paper"></fa-icon>
+            </div>
+        </div>
+    </button>
+    <div *ngIf="isDropdownOpen" class="dropdown-menu">
+      <div
+        class="dropdown-item"
+        *ngFor="let option of dropDownData.options"
+        (click)="selectOption(option)"
+      >
+        {{ option.label }}
+      </div>
+    </div>
+  </div>
+</div>

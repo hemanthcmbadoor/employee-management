@@ -11,6 +11,7 @@
   .sidebar {
     width: 215px;
     background-color: #fefefe;
+    border-right: 1px solid #cec8c8;
   }
 
   .main {
@@ -22,11 +23,12 @@
 
   .header {
     height: 60px;
-    background-color: #555;
-    color: #fff;
+    background-color: #fff;
     display: flex;
     align-items: center;
     padding: 0 16px;
+    border-bottom: 1px solid #cec8c8;
+    justify-content: end;
   }
 
   .content {

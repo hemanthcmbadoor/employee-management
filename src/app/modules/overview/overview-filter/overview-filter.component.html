@@ -1,0 +1,23 @@
+<div class="overview-filter-wrapper">
+    <div class="dropdown-section">
+        <app-dropdown [(selectedOption)]="departmentSelectOption" [dropDownData]="filterApplyData.department"></app-dropdown>
+
+        <app-dropdown [(selectedOption)]="rollTypeSelectOption" [dropDownData]="filterApplyData.rollType"></app-dropdown>
+
+        <app-dropdown [(selectedOption)]="designationSelectOption" [dropDownData]="filterApplyData.designation"></app-dropdown>
+
+        <app-dropdown [(selectedOption)]="experienceSelectOption" [dropDownData]="filterApplyData.experience"></app-dropdown>
+
+        <app-dropdown [(selectedOption)]="joinYearSelectOption" [dropDownData]="filterApplyData.joinYear"></app-dropdown>
+
+        <app-dropdown [(selectedOption)]="locationSelectOption" [dropDownData]="filterApplyData.location"></app-dropdown>
+
+        <app-dropdown [(selectedOption)]="teamSelectOption" [dropDownData]="filterApplyData.team"></app-dropdown>
+
+    </div>
+    <div class="button-section">
+        <button type="button" class="btn-custom-clear">Clear</button>
+
+        <button type="button" class="btn-custom-submit">Submit</button>
+    </div>
+</div>

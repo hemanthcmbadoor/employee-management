@@ -1,1 +1,6 @@
-<p>header works!</p>
+<div class="header-wrapper">
+    <div class="team-dropdown">
+        <fa-icon [icon]="['fas', 'user-group']" class="paper"></fa-icon>
+        <app-dropdown [(selectedOption)]="teamSelectOption" [dropDownData]="teamData" [isShowBorder]="false"></app-dropdown>
+    </div>
+</div>
