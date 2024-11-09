@@ -1,51 +1,66 @@
 <div class="sidebar-wrapper">
+  <div>
+    <div class="logo">
+      <img src="/assets/logo.png" alt="log.png" />
+    </div>
     <div>
-        <div class="logo">
-            <img src="/assets/logo.png" alt="log.png">
-        </div>
-        <div>
-            <div class="menu-list">
-                <fa-icon [icon]="['fas', 'tasks']" class="icon"></fa-icon>
-                <p>Overview</p>
-            </div>
+      <div class="menu-list" [routerLinkActive]="['active-page']">
+        <a [routerLink]="['/overview']">
+          <fa-icon [icon]="['fas', 'tasks']" class="icon"></fa-icon>
+          <p>Overview</p>
+        </a>
+      </div>
 
-            <div class="menu-list">
-                <fa-icon [icon]="['fas', 'envelope']" class="icon"></fa-icon>
-                <p>Messages</p>
-            </div>
+      <div class="menu-list">
+        <a>
+          <fa-icon [icon]="['fas', 'envelope']" class="icon"></fa-icon>
+          <p>Messages</p>
+        </a>
+      </div>
 
-            <div class="menu-list">
-                <fa-icon [icon]="['fas', 'search']" class="icon"></fa-icon>
-                <p>Search</p>
-            </div>
+      <div class="menu-list" [routerLinkActive]="['active-page']">
+        <a [routerLink]="['/search']">
+          <fa-icon [icon]="['fas', 'search']" class="icon"></fa-icon>
+          <p>Search</p>
+        </a>
+      </div>
 
-            <div class="menu-list">
-                <fa-icon [icon]="['fas', 'magnet']" class="icon"></fa-icon>
-                <p>Filter</p>
-            </div>
+      <div class="menu-list">
+        <a>
+          <fa-icon [icon]="['fas', 'magnet']" class="icon"></fa-icon>
+          <p>Filter</p>
+        </a>
+      </div>
 
-            <div class="menu-list">
-                <fa-icon [icon]="['fas', 'list']" class="icon"></fa-icon>
-                <p>History</p>
-            </div>
+      <div class="menu-list">
+        <a>
+          <fa-icon [icon]="['fas', 'list']" class="icon"></fa-icon>
+          <p>History</p>
+        </a>
+      </div>
 
-            <div class="menu-list">
-                <fa-icon [icon]="['fas', 'user']" class="icon"></fa-icon>
-                <p>My Account</p>
-            </div>
-        </div>
+      <div class="menu-list">
+        <a>
+          <fa-icon [icon]="['fas', 'user']" class="icon"></fa-icon>
+          <p>My Account</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="menu-list">
+      <a>
+        <fa-icon [icon]="['fas', 'comments']" class="icon"></fa-icon>
+        <p>Get Help</p>
+      </a>
     </div>
 
-    <div>
-        <div class="menu-list">
-            <fa-icon [icon]="['fas', 'comments']" class="icon"></fa-icon>
-            <p>Get Help</p>
-        </div>
-
-        <div class="menu-list">
-            <fa-icon [icon]="['fas', 'sign-out']" class="icon"></fa-icon>
-            <p>Sign Out</p>
-        </div>
+    <div class="menu-list">
+      <a>
+        <fa-icon [icon]="['fas', 'sign-out']" class="icon"></fa-icon>
+        <p>Sign Out</p>
+      </a>
     </div>
-
+  </div>
 </div>
