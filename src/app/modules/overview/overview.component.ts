@@ -20,6 +20,7 @@ export class OverviewComponent implements OnInit {
   public isPopupVisible = false;
   public popupData: Employee = defaultEmpData;
   public employeeData: Employee[] = [];
+  public _employeeDataCopy: Employee[] = [];
   private readonly empUtilityService = inject(EmployeeUtilityService);
   private readonly route = inject(Router);
 
@@ -29,6 +30,7 @@ export class OverviewComponent implements OnInit {
 
   getEmployeeData(): void {
     this.employeeData = [...this.empUtilityService.employeeData];
+    this._employeeDataCopy = [...this.employeeData];
   }
 
   clickMore(action: number, item: Employee): void {
@@ -67,9 +69,8 @@ export class OverviewComponent implements OnInit {
   }
 
   filterData(data: FilterActionData): Employee[] {
-   return this.employeeData.filter(employee => {
+   return this._employeeDataCopy.filter(employee => {
       let match = true;
-
       const departmentFilterValue = data?.department || '';
       const designFilterValue = data?.designation || '';
       const teamFilterValue = data?.team || '';
@@ -78,7 +79,7 @@ export class OverviewComponent implements OnInit {
           match = false;
       }
 
-      if (designFilterValue && !employee.designation.toLowerCase().includes(designFilterValue?.toLowerCase())) {
+      if (designFilterValue && !(employee.designation.toLowerCase() == designFilterValue?.toLowerCase())) {
           match = false;
       }
 
