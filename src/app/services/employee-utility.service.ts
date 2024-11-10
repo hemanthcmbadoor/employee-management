@@ -7,78 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EmployeeUtilityService {
 
-  public employeeData: Employee[] = [ 
-    {
-        "id": "1",
-        "name": "Leanne Graham",
-        "email": "Sincere@april.biz",
-        "phone": "1-770-736-8031 x56442",
-        "website": "hildegard.org",
-        "experience": "5.9",
-        "designation": "Software Developer",
-        "avatar": "assets/profile/avatar8.jpg",
-        "date_of_join": "2020-11-09",
-        "team": "Product Team",
-        "report_manager": "Natasha",
-        "department": "Front End Development"
-    },
-    {
-        "id": "2",
-        "name": "Ervin Howell",
-        "email": "Shanna@melissa.tv",
-        "phone": "010-692-6593 x09125",
-        "website": "anastasia.org",
-        "experience": "4.9",
-        "designation": "Senior Software Developer",
-        "avatar": "assets/profile/avatar3.webp",
-        "date_of_join": "2020-10-09",
-        "team": "IDC",
-        "report_manager": "Tony Stark",
-        "department": "ML Engineering"
-    },
-    {
-        "id": "3",
-        "name": "Clementine Bauch",
-        "email": "Nathan@yesenia.net",
-        "phone": "1-463-123-4447",
-        "website": "ramiro.info",
-        "experience": "3.3",
-        "designation": "Technical Lead",
-        "avatar": "assets/profile/avatar1.avif",
-        "date_of_join": "2020-10-01",
-        "team": "Radian",
-        "report_manager": "Chandler Bing",
-        "department": "ML Engineering"
-    },
-    {
-        "id": "4",
-        "name": "Patricia Lebsack",
-        "email": "Julianne.OConner@kory.org",
-        "phone": "1-770-736-8031 x56442",
-        "website": "kale.biz",
-        "experience": "1.9",
-        "designation": "Software Developer",
-        "avatar": "assets/profile/avatar8.jpg",
-        "date_of_join": "2019-04-12",
-        "team": "Manager",
-        "report_manager": "Lalit Agarwal",
-        "department": "ML Engineering"
-    },
-    {
-        "id": "5",
-        "name": "Chelsey Dietrich",
-        "email": "Lucio_Hettinger@annie.ca",
-        "phone": "(254)954-1289",
-        "website": "demarco.info",
-        "experience": "7",
-        "designation": "Quality Assurance",
-        "avatar": "assets/profile/avatar5.jpg",
-        "date_of_join": "2019-03-12",
-        "team": "Product Team",
-        "report_manager": "Natasha",
-        "department": "ML Engineering"
-    }
-  ];
+  public employeeData: Employee[] = [];
 
   private readonly toaster = inject(ToastrService);
   
@@ -120,13 +49,10 @@ export class EmployeeUtilityService {
       this.employeeData = [...this.employeeData];
       this.toaster.success('Employee data updated', 'Success');
     }
-    
   }
 
   deleteEmployee(data: Employee): boolean {
     const index = this.employeeData.findIndex(emp =>  emp?.id == data?.id);
-    console.log(index);
-    
     if (index >= 0) {
       this.employeeData.splice(index, 1);
       this.toaster.success('Employee deleted', 'Success');
@@ -135,8 +61,6 @@ export class EmployeeUtilityService {
   }
 
   getEmployeeById(id: string): Employee | undefined {
-    console.log(id);
-    
     return this.employeeData.find(emp => emp?.id == id);
   }
 }

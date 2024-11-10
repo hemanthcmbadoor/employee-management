@@ -20,7 +20,6 @@ export class OverviewComponent implements OnInit {
   public isPopupVisible = false;
   public popupData: Employee = defaultEmpData;
   public employeeData: Employee[] = [];
-  // private overviewServce =  inject(OverviewService);
   private readonly empUtilityService = inject(EmployeeUtilityService);
   private readonly route = inject(Router);
 
@@ -47,10 +46,6 @@ export class OverviewComponent implements OnInit {
     this.isPopupVisible = false;
   }
 
-  handleReturnData(data: any): void {
-    //
-  }
-
   deleteEmployee(confirm:boolean, data: Employee): void {
     if (confirm) {
       const status = this.empUtilityService.deleteEmployee(data);
@@ -64,7 +59,6 @@ export class OverviewComponent implements OnInit {
   }
 
   filterEmit(data: FilterActionData): void {
-      console.log('file', data);
       if (data.isClickedClear) {
         this.getEmployeeData();
       } else {
