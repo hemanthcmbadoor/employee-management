@@ -1,4 +1,18 @@
-# EmployeeManagement
+# Employee Management
+Employee Management Project with some of the feature
+
+- **Employee List**: Displays a list of all employees with basic information.
+- **Add Employee**: A form to add new employees to the list.
+- **Edit Employee**: Functionality to edit details of existing employees.
+- **Filter Module**: Allows filtering the employee list by various criteria:
+  - Department
+  - Designation
+  - Experience
+  - Year of Joined
+  - Team name
+
+> **Note**: This project does not currently use a backend API. Data is stored temporarily in a service file using Angular's state. As a result, any data added or edited will be reset when the page is refreshed.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
 
