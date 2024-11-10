@@ -1,0 +1,13 @@
+<div class="more-dropdown-wrapper">
+  <div class="dropdown">
+    <fa-icon
+      [icon]="['fas', 'ellipsis-vertical']"
+      class="paper"
+      (click)="toggleDropdown()"
+    ></fa-icon>
+    <div *ngIf="isDropdownOpen" class="dropdown-menu">
+      <div class="dropdown-item" (click)="selectOption(1)">Edit</div>
+      <div class="dropdown-item" (click)="selectOption(2)">Delete</div>
+    </div>
+  </div>
+</div>

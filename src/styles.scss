@@ -1,51 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 
-// @font-face {
-//     font-family: 'Roboto';
-//     font-style: normal;
-//     font-weight: 100;
-//     src: url('https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxIIzIFKw.woff2') format('woff2');
-// }
-
-// @font-face {
-//     font-family: 'Roboto';
-//     font-style: normal;
-//     font-weight: 300;
-//     src: url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc-.woff2') format('woff2');
-// }
-
-// @font-face {
-//     font-family: 'Roboto';
-//     font-style: normal;
-//     font-weight: 400;
-//     src: url('https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.woff2') format('woff2');
-// }
-
-// @font-face {
-//     font-family: 'Roboto';
-//     font-style: normal;
-//     font-weight: 500;
-//     src: url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc-.woff2') format('woff2');
-// }
-
-// @font-face {
-//     font-family: 'Roboto';
-//     font-style: normal;
-//     font-weight: 700;
-//     src: url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc-.woff2') format('woff2');
-// }
-
-// @font-face {
-//     font-family: 'Roboto';
-//     font-style: normal;
-//     font-weight: 900;
-//     src: url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtvBBc-.woff2') format('woff2');
-// }
+@import 'ngx-toastr/toastr';
 
 body {
     margin: 0px;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     p {
         letter-spacing: 0.03rem;
+    }
+
+    .btn-custom-secondary {
+      background-color: transparent;
+      color: #39ac73;
+      padding: 10px 30px;
+      border: 2px solid #39ac73;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-custom-primary {
+      background-color: #39ac73;
+      color: #fff;
+      padding: 10px 30px;
+      border: 2px solid #39ac73;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 }

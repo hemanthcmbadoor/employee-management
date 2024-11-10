@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DropDownOptionData, FilterDropDownData } from '../../modules/overview/overview.model';
 
 @Component({
   selector: 'app-dropdown',
@@ -11,21 +12,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class DropdownComponent {
   isDropdownOpen = false;
-  options = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
-  // selectedOption = '';
 
   @Input() isShowBorder = true;
-  @Input() selectedOption: any;
-  @Input() dropDownData: any;
-  @Output() selectedOptionChange = new EventEmitter<any>();
+  @Input() selectedOption: DropDownOptionData | undefined;
+  @Input() dropDownData!: FilterDropDownData;
+  @Output() selectedOptionChange = new EventEmitter<DropDownOptionData>();
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-  selectOption(option: any) {
-    console.log(option);
-    
+  selectOption(option: DropDownOptionData) {
     this.selectedOption = option;
     this.isDropdownOpen = false;
     this.selectedOptionChange.emit(option);

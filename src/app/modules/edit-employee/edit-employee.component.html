@@ -1,0 +1,177 @@
+<div class="edit-employee-wrapper">
+    <div class="form-wrapper">
+        <div class="form-container">
+          <h2>Edit Employee</h2>
+          <form class="form" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+            <div class="col-group">
+              <div class="form-group">
+                <label for="name">Name<span class="text-important"> *</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Enter name"
+                  name="name"
+                  formControlName="name"
+                />
+              </div>
+    
+              <div class="form-group">
+                <label for="email"
+                  >Email<span class="text-important"> *</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter email"
+                  name="email"
+                  formControlName="email"
+                />
+              </div>
+            </div>
+    
+            <div class="col-group">
+              <div class="form-group">
+                <label for="contact_no"
+                  >Contact No<span class="text-important"> *</span></label
+                >
+                <input
+                  type="text"
+                  id="contact_no"
+                  placeholder="Enter contact number"
+                  name="contact_no"
+                  formControlName="contact_no"
+                />
+              </div>
+    
+              <div class="form-group">
+                <label for="company_name"
+                  >Experience<span class="text-important"> *</span></label
+                >
+                <input
+                  type="text"
+                  id="experience"
+                  placeholder="Enter experience"
+                  name="experience"
+                  formControlName="experience"
+                />
+              </div>
+            </div>
+    
+            <div class="col-group">
+              <div class="form-group">
+                <label for="join_date"
+                  >Date of Join<span class="text-important"> *</span></label
+                >
+                <input
+                  type="date"
+                  id="join_date"
+                  name="join_date"
+                  formControlName="join_date"
+                />
+              </div>
+    
+              <div class="form-group">
+                <label for="designation"
+                  >Team<span class="text-important"> *</span></label
+                >
+                <select id="team" name="team" formControlName="team">
+                  <option value="">Select team</option>
+                  <ng-container *ngFor="let team of teamList; let i = index">
+                    <option [value]="team.name">{{ team.name }}</option>
+                  </ng-container>
+                </select>
+              </div>
+            </div>
+    
+            <div class="col-group">
+              <div class="form-group">
+                <label for="designation"
+                  >Designation<span class="text-important"> *</span></label
+                >
+                <select
+                  id="designation"
+                  name="designation"
+                  formControlName="designation"
+                >
+                  <option value="">Select designation</option>
+                  <ng-container *ngFor="let des of designationList; let i = index">
+                    <option [value]="des.label">{{ des.label }}</option>
+                  </ng-container>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="department"
+                  >Department<span class="text-important"> *</span></label
+                >
+                <select
+                  id="department"
+                  name="department"
+                  formControlName="department"
+                >
+                  <option value="">Select department</option>
+                  <ng-container *ngFor="let des of departmentList; let i = index">
+                    <option [value]="des.name">{{ des.name }}</option>
+                  </ng-container>
+                </select>
+              </div>
+              
+            </div>
+    
+            <div class="col-group">
+
+              <div class="form-group">
+                <label for="designation"
+                  >Reporting Manager<span class="text-important"> *</span></label
+                >
+                <select
+                  id="report_manager"
+                  name="report_manager"
+                  formControlName="report_manager"
+                >
+                  <option value="">Select reporting manager</option>
+                  <ng-container *ngFor="let man of reportManager; let i = index">
+                    <option [value]="man.name">{{ man.name }}</option>
+                  </ng-container>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact_no">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  placeholder="Enter website address"
+                  name="website"
+                  formControlName="website"
+                />
+              </div>
+            </div>
+    
+            <div class="form-group">
+              <label>Choose an Avatar<span class="text-important"> *</span></label>
+              <div class="avatar-selection">
+                <ng-container *ngFor="let avatar of avatarList; let i = index">
+                  <input
+                    type="radio"
+                    id="avatar-{{ i }}"
+                    name="avatar"
+                    [value]="avatar.path"
+                    formControlName="avatar"
+                  />
+                  <label for="avatar-{{ i }}"
+                    ><img [src]="avatar.path" alt="{{ 'Avatar' + i }}"
+                  /></label>
+                </ng-container>
+              </div>
+            </div>
+            
+            <div class="button-section">
+                <button class="button-secondary" type="button" (click)="cancel()">Cancel</button>
+                <button class="button-primary" type="submit" [disabled]="employeeForm.invalid && !employeeId">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+  

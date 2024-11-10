@@ -1,185 +1,208 @@
 .overview-wrapper {
+  display: flex;
+  flex-flow: row;
+
+  .right-content {
+    flex: 1;
+  }
+
+  .main-content {
     display: flex;
-    flex-flow: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    height: 88vh;
+  }
+  .card-wrapper {
+    margin: 10px;
+    .card-body {
+      cursor: default;
+      transition: transform 0.3s ease;
+      background: #fff;
+      width: 350px;
+      border: 1px solid #cec8c8;
+      border-radius: 6px;
 
-    .main-content {
-        display: flex;
-        flex-wrap: wrap;
-        overflow-y: auto;
-        height: 88vh;
-    }
-    .card-wrapper {
-        margin: 10px;
-        .card-body {
-            background: #fff;
-            width: 350px;
-            border: 1px solid #cec8c8;
-            border-radius: 6px;
+      .card-header {
+        margin: 10px 10px;
 
-            .card-header {
-                margin: 10px 10px;
+        .profile-section {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 16px;
 
-                .profile-section {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 16px;
-
-                    .profile-image-wrapper {
-                        img {
-                            width: 70px;
-                            height: 70px;
-                            border-radius: 50%;
-                            object-fit: cover;
-                        }
-                    }
-
-                    .profile-name-wrapper {
-                        p {
-                            margin: 8px 0px;
-                        }
-                        .name {
-                            font-weight: 500;
-                            color: #333333;
-                        }
-                        .designation {
-                            font-weight: 400;
-                            color: #666666;
-                        }
-                    }
-                }
-                .profile-rate {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    margin: 15px 0px;
-                    .rating-star {
-                        display: inline-flex;
-                        .star {
-                            font-size: 18px;
-                            color: #9f9f9f;  
-                            margin-right: 5px;
-                        }
-                        .star.filled {
-                            color: #f6ae42;
-                        }
-                        .star-half-alt {
-                            color: #f6ae42;
-                        }
-                    }
-                    .rating-text {
-                        color: #666666;
-                        font-size: 14px;
-                    }
-                }
+          .profile-image-wrapper {
+            img {
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              object-fit: cover;
             }
+          }
 
-            .card-content {
-                .card-content-row {
-                    border-top: 1px solid #efefef;
-                    font-size: 14px;
-                    padding: 18px 10px;
-                    .title {
-                        color: #666666;
-                    }
-                    .title-value {
-                        color: #333333;
-                        font-weight: 500;
-                    }
-                    .contact-wrapper {
-                        display: flex;
-                        justify-content: space-between;
-                        .contact-text {
-                            color: #333333;
-                        }
-                    }
-                }
-
-                .date-container {
-                    display: flex;
-                    justify-content: space-between;
-                } 
+          .profile-name-wrapper {
+            p {
+              margin: 8px 0px;
             }
-
-            .profile-icon {
-                min-width: 32px;
-                width: 32px;
-                height: 32px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                background: #fff;
-                box-shadow: 0px 0px 4px 4px rgba(191, 191, 191, 0.5);
-                .paper {
-                    color: #666666;
-                    font-size: 14px;
-                }
-                .phone {
-                    color: #355ea8;
-                    font-size: 14px;
-                }
-                .mail {
-                    color: #cb5242;
-                    font-size: 14px;
-                }
+            .name {
+              font-weight: 500;
+              color: #333333;
             }
-            .contact-set {
-                display: flex;
-                align-items: center;
-                gap: 8px;
+            .designation {
+              font-weight: 400;
+              color: #666666;
             }
+          }
         }
-    }
+        .profile-rate {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin: 15px 0px;
+          .rating-star {
+            display: inline-flex;
+            .star {
+              font-size: 18px;
+              color: #9f9f9f;
+              margin-right: 5px;
+            }
+            .star.filled {
+              color: #f6ae42;
+            }
+            .star-half-alt {
+              color: #f6ae42;
+            }
+          }
+          .rating-text {
+            color: #666666;
+            font-size: 14px;
+          }
+        }
+      }
 
-    .secondary-header {
+      .card-content {
+        .card-content-row {
+          border-top: 1px solid #efefef;
+          font-size: 14px;
+          padding: 18px 10px;
+          .title {
+            color: #666666;
+          }
+          .title-value {
+            color: #333333;
+            font-weight: 500;
+          }
+          .contact-wrapper {
+            display: flex;
+            justify-content: space-between;
+            .contact-text {
+              color: #333333;
+            }
+          }
+        }
+
+        .date-container {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      .profile-icon-section {
         display: flex;
-        justify-content: space-between;
-        margin: 15px 10px;
-    }
-
-    .form-check {
+        flex-direction: row;
+        align-items: center;
+        gap: 19px;
+        .profile-icon {
+          min-width: 32px;
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background: #fff;
+          box-shadow: 0px 0px 4px 4px rgba(191, 191, 191, 0.5);
+          .paper {
+            color: #666666;
+            font-size: 14px;
+          }
+          .phone {
+            color: #355ea8;
+            font-size: 14px;
+          }
+          .mail {
+            color: #cb5242;
+            font-size: 14px;
+          }
+        }
+      }
+      .contact-set {
         display: flex;
         align-items: center;
-        .custom-checkbox {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            width: 18px;
-            height: 18px;
-            border: 2px solid #39ac73;
-            border-radius: 4px;
-            background-color: transparent;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
-        }
-        
-        .custom-checkbox:checked {
-            background-color: transparent;
-            border-color: #39ac73;
-        }
-        
-        .custom-checkbox:checked::before {
-            content: '';
-            position: absolute;
-            top: 0px;
-            left: 4px;
-            width: 4px;
-            height: 10px;
-            border-right: 2px solid #39ac73;
-            border-bottom: 2px solid #39ac73;
-            transform: rotate(45deg);
-        }
-        
-        .custom-checkbox:hover {
-            border-color: #39ac73;
-        }
-
-        .form-check-label {
-            font-size: 14px;
-            color: #333333;
-            font-weight: 400;
-        }
+        gap: 8px;
+      }
     }
+
+    .card-body:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .secondary-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 10px;
+  }
+
+  .form-check {
+    display: flex;
+    align-items: center;
+    .custom-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #39ac73;
+      border-radius: 4px;
+      background-color: transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .custom-checkbox:checked {
+      background-color: transparent;
+      border-color: #39ac73;
+    }
+
+    .custom-checkbox:checked::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 4px;
+      width: 4px;
+      height: 10px;
+      border-right: 2px solid #39ac73;
+      border-bottom: 2px solid #39ac73;
+      transform: rotate(45deg);
+    }
+
+    .custom-checkbox:hover {
+      border-color: #39ac73;
+    }
+
+    .form-check-label {
+      font-size: 14px;
+      color: #333333;
+      font-weight: 400;
+    }
+  }
+
+  .popup-button-section {
+    display: flex;
+    justify-content: end;
+    gap: 12px;
+  }
 }

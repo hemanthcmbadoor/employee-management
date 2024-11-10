@@ -2,11 +2,11 @@
   <div class="dropdown">
     <button class="dropdown-btn" [ngClass]="{ 'bottom-border': isShowBorder } " (click)="toggleDropdown()">
         <div class="title1">
-            {{ dropDownData?.label }}
+            {{ dropDownData.label }}
         </div>
         <div class="dropdown-title-bottom">
             <div>
-                <span>{{ selectedOption ? selectedOption?.label : dropDownData.placeholder }}</span>
+                <span>{{ selectedOption ? selectedOption.label : dropDownData.placeholder }}</span>
             </div>
             <div>
                 <fa-icon [icon]="['fas', 'chevron-down']" class="paper"></fa-icon>

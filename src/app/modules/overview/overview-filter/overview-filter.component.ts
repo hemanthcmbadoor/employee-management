@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { avatarList, departmentList, designationList, reportManager, teamList } from '../../../data/company-data.data';
 import { SharedModule } from '../../../shared/shared.module';
+import { DropDownOptionData, FilterActionData, FilterDropDownData } from '../overview.model';
 
 @Component({
   selector: 'app-overview-filter',
@@ -8,116 +10,139 @@ import { SharedModule } from '../../../shared/shared.module';
   templateUrl: './overview-filter.component.html',
   styleUrl: './overview-filter.component.scss'
 })
-export class OverviewFilterComponent {
-  public departmentSelectOption = '';
-  public rollTypeSelectOption = '';
-  public designationSelectOption = '';
-  public experienceSelectOption = '';
-  public joinYearSelectOption = '';
-  public locationSelectOption = '';
-  public teamSelectOption = '';
+export class OverviewFilterComponent implements OnInit{
+  public departmentSelectOption: DropDownOptionData | undefined;
+  public designationSelectOption: DropDownOptionData | undefined;
+  public experienceSelectOption: DropDownOptionData | undefined;
+  public joinYearSelectOption: DropDownOptionData | undefined;
+  public teamSelectOption: DropDownOptionData | undefined;
 
-  public sample = {
+  public readonly departmentList = departmentList;
+  public readonly teamList = teamList;
+  public readonly reportManager = reportManager;
+  public readonly designationList = designationList;
+  public readonly avatarList = avatarList;
 
-  };
-  public filterApplyData = {
-    department: {
+  public departmentFilterData!: FilterDropDownData;
+  public designationFilterData!: FilterDropDownData;
+  public teamFilterData!: FilterDropDownData;
+  public experienceFilterData!: FilterDropDownData;
+  public joinYearFilterData!: FilterDropDownData;
+
+  @Output() filterAction = new EventEmitter<FilterActionData>();
+
+  ngOnInit(): void {
+    this.setDepartmentDropdown();
+    this.setDesignationDropdown();
+    this.setExperienceDropdown();
+    this.setJonYearDropdown();
+    this.setTeamDropdown();
+  }
+
+  setDepartmentDropdown(): void {
+    const transformedDepartmentList = departmentList.map(department => ({
+      label: department.name,
+      value: department.name
+    }));
+    this.departmentFilterData = {
       label: 'Department',
       placeholder: 'Select Department',
-      options: [
-        {
-          label: 'Front End Development',
-          id: 1
-        },
-        {
-          label: 'ML Engineering',
-          id: 2
-        }
-      ]
-    },
-    rollType: {
-      label: 'Roll Type',
-      placeholder: 'Select Roll Type',
-      options: [
-        {
-          label: 'FullTime',
-          id: 3
-        },
-        {
-          label: 'Contract',
-          id: 4
-        }
-      ]
-    },
-    designation: {
+      options: transformedDepartmentList
+    }
+  }
+
+  setDesignationDropdown(): void {
+    const transformeDesignationList = designationList.map(des => ({
+      label: des.label,
+      value: des.label
+    }));
+    this.designationFilterData = {
       label: 'Designation',
       placeholder: 'Select Designation',
-      options: [
-        {
-          label: 'Senior UI Developer',
-          id: 5
-        },
-        {
-          label: 'Senior Backend Developer',
-          id: 6
-        }
-      ]
-    },
-    experience: {
+      options: transformeDesignationList
+    }
+  }
+
+  setExperienceDropdown(): void {
+    this.experienceFilterData = {
       label: 'Experience',
       placeholder: 'Select Experience',
       options: [
         {
           label: '5 years above',
-          id: 7
+          value: '5'
         },
         {
           label: '10 years above',
-          id: 8
+          value: '10'
         }
       ]
-    },
-    joinYear: {
+    }
+  }
+
+  setJonYearDropdown(): void {
+    this.joinYearFilterData = {
       label: 'Year of Joining',
       placeholder: 'Select Year of Joining',
       options: [
         {
           label: '2019',
-          id: 9
+          value: '2019'
         },
         {
           label: '2020',
-          id: 10
+          value: '2020'
         }
       ]
-    },
-    location: {
-      label: 'Location',
-      placeholder: 'Select Location',
-      options: [
-        {
-          label: 'Bangalore',
-          id: 11
-        },
-        {
-          label: 'Ernakulam',
-          id: 12
-        }
-      ]
-    },
-    team: {
+    }
+  }
+
+  setTeamDropdown(): void {
+    const transformTeamList = teamList.map(des => ({
+      label: des.name,
+      value: des.name
+    }));
+    this.teamFilterData = {
       label: 'Team',
       placeholder: 'Select Team',
-      options: [
-        {
-          label: 'OCRC Bangalore',
-          id: 13
-        },
-        {
-          label: 'Google',
-          id: 14
-        }
-      ]
+      options: transformTeamList
+    }
+  }
+
+  clear(): void {
+    this.departmentSelectOption = undefined;
+    this.designationSelectOption = undefined;
+    this.experienceSelectOption = undefined;
+    this.joinYearSelectOption = undefined;
+    this.teamSelectOption = undefined;
+
+    this.filterAction.emit({
+        department: null,
+        designation: null,
+        experience: null,
+        join_year: null,
+        team: null,
+        isClickedClear: true
+    });
+  }
+
+  submit(): void {
+    if (
+      this.departmentSelectOption || 
+      this.designationSelectOption || 
+      this.experienceSelectOption || 
+      this.joinYearSelectOption || 
+      this.teamSelectOption
+    ) {
+      const filterData = {
+        department: this.departmentSelectOption ? this.departmentSelectOption?.value : null,
+        designation: this.designationSelectOption ? this.designationSelectOption?.value : null,
+        experience: this.experienceSelectOption ? this.experienceSelectOption?.value : null,
+        join_year: this.joinYearSelectOption ? this.joinYearSelectOption?.value : null,
+        team: this.teamSelectOption ? this.teamSelectOption?.value : null,
+        isClickedClear: false
+      }
+      this.filterAction.emit(filterData);
     }
   }
 }

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MoreDropdownComponent } from './more-dropdown/more-dropdown.component';
+import { PopupComponent } from './popup/popup.component';
 
 
 
@@ -10,11 +12,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     CommonModule,
     DropdownComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MoreDropdownComponent,
+    PopupComponent
   ],
   exports: [
     DropdownComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MoreDropdownComponent,
+    PopupComponent
   ]
 })
 export class SharedModule { }

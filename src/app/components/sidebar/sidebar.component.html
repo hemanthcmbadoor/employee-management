@@ -5,6 +5,13 @@
     </div>
     <div>
       <div class="menu-list" [routerLinkActive]="['active-page']">
+        <a [routerLink]="['/add-employee']">
+          <fa-icon [icon]="['fas', 'plus']" class="icon"></fa-icon>
+          <p>Add Employee</p>
+        </a>
+      </div>
+
+      <div class="menu-list" [routerLinkActive]="['active-page']">
         <a [routerLink]="['/overview']">
           <fa-icon [icon]="['fas', 'tasks']" class="icon"></fa-icon>
           <p>Overview</p>
@@ -18,8 +25,8 @@
         </a>
       </div>
 
-      <div class="menu-list" [routerLinkActive]="['active-page']">
-        <a [routerLink]="['/search']">
+      <div class="menu-list">
+        <a>
           <fa-icon [icon]="['fas', 'search']" class="icon"></fa-icon>
           <p>Search</p>
         </a>

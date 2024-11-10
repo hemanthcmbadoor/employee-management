@@ -1,22 +1,20 @@
-export interface Employee {
-    id: number;
-    email: string;
-    phone: string;
-    name: string;
-    username: string;
-    website: string;
-    address: AddressData;
-    company: CompanyData;
+
+export interface FilterDropDownData {
+    label: string;
+    placeholder: string;
+    options: DropDownOptionData[];
 }
 
-export interface AddressData {
-    city: string;
-    street: string;
-    zipcode: string;
+export interface DropDownOptionData {
+    label: string;
+    value: string;
 }
 
-export interface CompanyData {
-    bs: string;
-    catchPhrase: string;
-    name: string;
+export interface FilterActionData {
+    isClickedClear: boolean;
+    department: string | null;
+    designation: string | null;
+    experience: string |null;
+    join_year: string |null;
+    team: string | null;
 }

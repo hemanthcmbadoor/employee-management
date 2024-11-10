@@ -6,34 +6,11 @@
   justify-content: space-between;
   overflow-y: auto;
   overflow-x: hidden;
-
+  border-right: 1px solid #cec8c8;
   .button-section {
-
     display: flex;
     justify-content: space-between;
     margin: 10px;
     gap: 10px;
-
-    .btn-custom-clear {
-      background-color: transparent;
-      color: #39ac73;
-      padding: 10px 30px;
-      border: 2px solid #39ac73;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-custom-submit {
-      background-color: #39ac73;
-      color: #fff;
-      padding: 10px 30px;
-      border: 2px solid #39ac73;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
   }
 }
