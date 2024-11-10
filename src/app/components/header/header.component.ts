@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
+import { DropDownOptionData, FilterDropDownData } from '../../modules/overview/overview.model';
 
 @Component({
   selector: 'app-header',
@@ -9,22 +10,22 @@ import { SharedModule } from '../../shared/shared.module';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  public teamSelectOption = '';
-  public teamData = {
+  public teamSelectOption: DropDownOptionData | undefined;
+  public teamData: FilterDropDownData = {
     label: '',
     placeholder: 'Choose Team',
     options: [
       {
         label: 'Product Team',
-        id: 1
+        value: '1'
       },
       {
         label: 'IDC',
-        id: 2
+        value: '2'
       },
       {
         label: 'OCBC',
-        id: 3
+        value: '3'
       }
     ]
   };

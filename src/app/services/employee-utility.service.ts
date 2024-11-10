@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { Employee, FormEmployee } from './employee-utility.model';
 import { ToastrService } from 'ngx-toastr';
+import { Employee, FormEmployee } from './employee-utility.model';
 
 @Injectable({
   providedIn: 'root'

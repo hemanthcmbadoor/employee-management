@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Employee } from '../../services/employee-utility.model';
 import { EmployeeUtilityService } from '../../services/employee-utility.service';
-import { OverviewFilterComponent } from './overview-filter/overview-filter.component';
 import { SharedModule } from '../../shared/shared.module';
+import { OverviewFilterComponent } from './overview-filter/overview-filter.component';
 import { defaultEmpData } from './overview.data';
-import { Route, Router } from '@angular/router';
 import { FilterActionData } from './overview.model';
 
 @Component({
